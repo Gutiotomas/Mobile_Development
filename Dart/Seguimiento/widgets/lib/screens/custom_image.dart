@@ -15,7 +15,17 @@ class _CustomImageState extends State<CustomImage> {
     return Stack(
       children: [
         Positioned.fill(
-            child: Image.asset('assets/unal_1.png', fit: BoxFit.cover))
+          child: Image.asset('assets/unal_1.png', fit: BoxFit.cover),
+        ),
+        Positioned(
+          bottom: 16,
+          right: 16,
+          child: Icon(
+            Icons.settings,
+            size: 30,
+            color: Colors.black,
+          ),
+        ),
       ],
     );
   }
