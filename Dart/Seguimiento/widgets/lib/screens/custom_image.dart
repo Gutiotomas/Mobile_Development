@@ -22,7 +22,7 @@ class _CustomImageState extends State<CustomImage> {
           right: 16,
           child: Icon(
             Icons.settings,
-            size: 30,
+            size: 40,
             color: Colors.black,
           ),
         ),
