@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Info extends StatelessWidget {
+  static const String route = '/info';
   const Info({super.key});
 
   @override
