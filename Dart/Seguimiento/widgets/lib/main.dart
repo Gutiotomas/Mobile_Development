@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/screens/custom_image.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:widgets/screens/info.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: CustomImage(),
+      routes: <String, WidgetBuilder>{
+        Info.route: (context) => Info(),
+      },
     );
   }
 }
