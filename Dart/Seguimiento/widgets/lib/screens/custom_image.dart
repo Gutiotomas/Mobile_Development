@@ -12,12 +12,12 @@ class CustomImage extends StatefulWidget {
 }
 
 class _CustomImageState extends State<CustomImage> {
-  String _name = '';
+  String _imageName = 'unal_1.png';
 
   @override
   void initState() {
     super.initState();
-    getContainerName();
+    getImageName();
   }
 
   @override
@@ -25,7 +25,7 @@ class _CustomImageState extends State<CustomImage> {
     return Stack(
       children: [
         Positioned.fill(
-          child: Image.asset('assets/unal_1.png', fit: BoxFit.cover),
+          child: Image.asset('assets/$_imageName', fit: BoxFit.cover),
         ),
         Positioned(
           bottom: 16,
@@ -44,12 +44,12 @@ class _CustomImageState extends State<CustomImage> {
     );
   }
 
-  Future getContainerName() async {
+  Future getImageName() async {
     final SharedPreferencesHelper sharedPreferencesHelper =
         SharedPreferencesHelper();
-    String name = await sharedPreferencesHelper.getContainerName();
+    String imageName = await sharedPreferencesHelper.getImageName();
     setState(() {
-      _name = name;
+      _imageName = imageName;
     });
   }
 }

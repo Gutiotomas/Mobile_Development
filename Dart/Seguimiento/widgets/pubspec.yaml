@@ -59,7 +59,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/
+    - assets/unal_1.png
+    - assets/unal_2.png
+    - assets/unal_3.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
