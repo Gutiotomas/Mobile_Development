@@ -3,6 +3,8 @@ import '../data/helper/shared_preferences_helper.dart';
 import 'custom_image.dart';
 
 class Config extends StatefulWidget {
+  const Config({super.key});
+
   @override
   _ConfigState createState() => _ConfigState();
 }
