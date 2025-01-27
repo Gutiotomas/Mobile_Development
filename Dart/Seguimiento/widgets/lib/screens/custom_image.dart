@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../data_helper/shared_preferences_helper.dart';
+import '../screens/config.dart';
 
 class CustomImage extends StatefulWidget {
   const CustomImage({super.key});
@@ -10,6 +12,14 @@ class CustomImage extends StatefulWidget {
 }
 
 class _CustomImageState extends State<CustomImage> {
+  String _name = '';
+
+  @override
+  void initState() {
+    super.initState();
+    getContainerName();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,13 +30,26 @@ class _CustomImageState extends State<CustomImage> {
         Positioned(
           bottom: 16,
           right: 16,
-          child: Icon(
-            Icons.settings,
-            size: 40,
-            color: Colors.black,
+          child: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (BuildContext context) => Config()));
+            },
+            style: ButtonStyle(),
+            icon: const Icon(Icons.settings),
+            iconSize: 40,
           ),
         ),
       ],
     );
+  }
+
+  Future getContainerName() async {
+    final SharedPreferencesHelper sharedPreferencesHelper =
+        SharedPreferencesHelper();
+    String name = await sharedPreferencesHelper.getContainerName();
+    setState(() {
+      _name = name;
+    });
   }
 }
