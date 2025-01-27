@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data_helper/shared_preferences_helper.dart';
+import '../data/helper/shared_preferences_helper.dart';
 import 'custom_image.dart';
 
 class Config extends StatefulWidget {
