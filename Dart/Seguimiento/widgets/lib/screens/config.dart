@@ -22,20 +22,21 @@ class _ConfigState extends State<Config> {
 
   Future<void> _loadCurrentImageName() async {
     String? imageName = await sharedPreferencesHelper.getImageName();
-    if (imageName != null) {
-      int index = _imageNames.indexOf(imageName);
-      if (index != -1) {
-        setState(() {
-          _currentContainerName = _containerNames[index];
-        });
-      }
+    int index = _imageNames.indexOf(imageName);
+    if (index != -1) {
+      setState(() {
+        _currentContainerName = _containerNames[index];
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Configuración')),
+      appBar: AppBar(
+        title: Text('Configuración'),
+        centerTitle: true,
+      ),
       body: Center(
         child: DropdownButton<String>(
           value: _currentContainerName,
