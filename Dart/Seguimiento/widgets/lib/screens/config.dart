@@ -12,7 +12,7 @@ class Config extends StatefulWidget {
 class _ConfigState extends State<Config> {
   final SharedPreferencesHelper sharedPreferencesHelper =
       SharedPreferencesHelper();
-  final List<String> _containerNames = ["Unal Colombia", "Escudo Unal", "Unal"];
+  final List<String> _containerNames = ["Unal Colombia", "Escudo Unal", "UN"];
   final List<String> _imageNames = ["unal_1.png", "unal_2.png", "unal_3.png"];
   String _currentContainerName = "Unal Colombia";
 
