@@ -15,6 +15,24 @@ class _ConfigState extends State<Config> {
   String _currentContainerName = "Unal Colombia";
 
   @override
+  void initState() {
+    super.initState();
+    _loadCurrentImageName();
+  }
+
+  Future<void> _loadCurrentImageName() async {
+    String? imageName = await sharedPreferencesHelper.getImageName();
+    if (imageName != null) {
+      int index = _imageNames.indexOf(imageName);
+      if (index != -1) {
+        setState(() {
+          _currentContainerName = _containerNames[index];
+        });
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Configuración')),
