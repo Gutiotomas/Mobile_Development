@@ -13,7 +13,8 @@ class QuotePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reseñas de ZenQuotes'),
+        title: const Center(
+          child: Text('Reseñas de ZenQuotes')),
       ),
       body: Center(
         child: BlocBuilder<QuoteBloc, QuoteState>(
@@ -27,14 +28,14 @@ class QuotePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    state.quote.split(' - ')[0], // Display the quote
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    state.quote.split(' - ')[0],
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    state.quote.split(' - ')[1], // Display the author
-                    style: const TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
+                    state.quote.split(' - ')[1],
+                    style: const TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
                     textAlign: TextAlign.center,
                   ),
                 ],
